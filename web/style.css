@@ -1,0 +1,394 @@
+/* 
+    Created on : 19 apr 2023, 15:16:17
+    Author     : mattia luca michele severino
+*/
+
+*{
+    box-sizing: border-box;
+}
+
+[class*="col-"]{
+    /*float: left;*/
+    padding: 0px;
+}
+
+.col-1{width: 66.7%}
+.col-2{width: 33.3%}
+.col-3{width: 100%}
+.col-4{width: 75%}
+.col-5{width: 25%}
+
+
+@media only screen and (min-width: 600px){
+    [class*="col-"]{
+    float: left;
+    padding: 0px;
+    }
+    
+    body{
+    margin: 0px;
+    }
+
+    header{
+        background-color: #FF8400;
+        height: auto;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    header div img{
+        width: 200px;
+        height: 200px;
+    }
+
+    header div{
+        text-align: center;
+    }
+
+
+    nav{
+        background-color: #FFD93D;
+        text-align: center;
+        position: sticky;
+    }
+
+    #attivo {background-color: #FFD93D;}
+
+    nav ul{
+        margin: 0px;
+    }
+
+    nav li{
+        list-style-type: none;
+        display: inline-block;
+        text-align: center;
+        font-size: 1.3em;
+        transition: ease 0.3s;
+    }
+
+    nav li + li {
+        margin-left: 20px;
+    }
+
+    nav li a{
+        padding: 10px;
+        color: black;
+        text-decoration: none;
+        display: block;
+    }
+
+    nav li:hover{
+        background: #f0c100;
+    }
+    .contentPrimario{
+        background-color: #F6F1E9;
+        display: inline-block;
+        position: sticky;
+    }
+    .contentSecondario{
+        background-color: #F6F1F9;
+        display: inline-block;
+        position: sticky;
+    }
+    footer{
+        display: inline-block;
+        background-color: black;
+        text-align: center;
+        color: white;
+    }
+    
+    
+    /* PAGINA ACCEDI */
+
+    .boxAccedi{
+        background-color: #FFD93D;
+        font-size: 35px;
+        text-align: center;
+        border: 5px solid #f0c100;
+        border-radius: 15px;
+        margin: 20%;
+    }
+    
+    .boxAccedi div{
+        display: block;
+        vertical-align: middle;
+        height: 50px;
+    }
+    
+    .boxAccedi form{
+        text-align: left;   
+    }
+    
+    .boxAccedi input[type=text], input[type=password], input[type=date], input[type=time]{
+        width: 100%;
+        padding: 12px 20px;
+        margin: 2% 3% 3% 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    
+    .boxAccedi .nome{
+        width: 100%;
+        height: auto;
+        padding: 12px 20px;
+        margin-bottom: 10%;
+        display: inline-table;
+        box-sizing: border-box;
+    }
+    
+    .boxAccedi input[type=submit]{
+        background-color: greenyellow;
+        width: 100%;
+        padding: 12px 20px;
+        margin: 2% 3% 3% 0;
+        display: inline-block;
+        border: 1px solid;
+        box-sizing: border-box;
+    }
+    
+    .boxAccedi hr{
+        margin-top: 0px;
+        margin-bottom: 0px;
+        width: 20%;
+        text-align: left;
+        margin-left: 0px;
+    }
+
+    .boxAccedi h2{
+        background-color:#FFD93D; 
+        font-size: 35px;
+        color: red;
+    }
+
+    .boxAccedi label{
+        font-size: 20px;
+    } 
+
+    .col-2Accedi{
+        background-color: #e37702;
+        display: inline-block;
+        position: sticky;
+        min-height: 100%;
+        width: 33.3%;
+    }
+
+
+    /*PAGINA CHI SIAMO*/
+
+    .descrizione{
+        text-align: center;
+        background-color: #F6F1E9;
+        padding: 2%;
+    }
+    
+    .descrizione h2{
+        font-size: 2.1em;
+    }
+    
+    .descrizione p{
+        text-align: justify;
+    }
+
+    .descrizione hr{
+        width: 70%;
+    }
+
+    
+    .lista_team{
+        text-align: center;
+        background-color: #F6F1E9;
+        padding: 2%;
+    }
+    
+    .lista_team ul{
+        list-style: none;
+    }
+
+    .lista_team h2{
+        font-size: 2.1em;
+    }
+    
+    .lista_team img{
+        border-radius: 40px;
+        width: 150px;
+    }
+
+    .lista_team .persona{
+        width: 80%;
+        margin-left: 20px;
+        text-align: left;
+        vertical-align: middle;
+    }
+    
+    .lista_team .box{
+        border: 2px solid;
+        border-radius: 10px;
+        padding: 20px;
+        max-width: max-content;
+        margin: 20px auto;
+        display: inline-block;
+    }
+    
+    .lista_team img, .persona{
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .persona{
+        text-align: justify;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    [class*="col-"]{
+    float: left;
+    width: 100%;
+    padding: 0px;
+    }
+    
+    body{
+    margin: 0px;
+    }
+    
+    header{
+    background-color: #FF8400;
+    height: auto;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    }
+
+    header div img{
+    width: 200px;
+    height: 200px;
+    }
+
+    header div{
+        text-align: center;
+    }
+    
+    footer{
+        display: inline-block;
+        background-color: black;
+        text-align: center;
+        color: white;
+    }
+    
+    .contentPrimario{
+        background-color: #F6F1E9;
+        display: inline-block;
+        position: sticky;
+    }
+    .contentSecondario{
+        background-color: #F6F1F9;
+        display: inline-block;
+        position: sticky;
+    }
+
+    /*NAVBAR*/
+    
+    nav{
+    background-color: #FFD93D;
+    text-align: center;
+    position: sticky;
+    }
+    
+    nav ul{
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    nav li{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border: 1px solid;
+        font-size: 1.3em;
+        transition: ease 0.3s;
+    }
+    
+    nav li a{
+        padding: 10px;
+        color: black;
+        text-decoration: none;
+        display: block;
+    }
+
+    nav li:hover{
+        background: #f0c100;
+    }
+    
+       /*PAGINA CHI SIAMO*/
+
+    .descrizione{
+        text-align: center;
+        background-color: #F6F1E9;
+        padding: 2%;
+    }
+    
+    .descrizione h2{
+        font-size: 2.1em;
+    }
+    
+    .descrizione p{
+        text-align: justify;
+    }
+
+    .descrizione hr{
+        width: 70%;
+    }
+
+    
+    .lista_team{
+        text-align: center;
+        background-color: #F6F1E9;
+        padding: 2%;
+    }
+    
+    .lista_team ul{
+        list-style: none;
+    }
+
+    .lista_team h2{
+        font-size: 2.1em;
+    }
+    
+    .lista_team img{
+        border-radius: 40px;
+        width: 150px;
+    }
+
+    .lista_team .persona{
+        width: 80%;
+        margin-left: 20px;
+        text-align: left;
+        vertical-align: middle;
+    }
+    
+    .lista_team .box{
+        border: 2px solid;
+        border-radius: 10px;
+        padding: 20px;
+        max-width: max-content;
+        margin: 20px auto;
+        display: inline-block;
+    }
+    
+    .lista_team img, .persona{
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .persona{
+        text-align: justify;
+    }
+    
+}
+@font-face{
+    font-family: 'Schibsted Grotesk', sans-serif;
+    src: url(Font/SchibstedGrotesk-VariableFont_wght.ttf);
+}
