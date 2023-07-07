@@ -1,3 +1,4 @@
+<%@taglib prefix = "c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 
 <!--
@@ -23,23 +24,27 @@
         <jsp:include page="header.jsp" />
         
         <jsp:include page="navbar.jsp" />
+            
+           
         
                     <!<!-- Contenuto principale della pagina -->
             <section class="contentPrimario col-1">
                 <div class="boxAccedi">
                 <h2>Registrati</h2>
                 <form action="login" method="POST">
-                    <div class="nome">
+                    <div class="nome">     
                     <label class="label" for="nome">Nome</label><hr>
                     <input  type="text" name="nome" id="nome">
                     <label class="label" for="cognome">Cognome</label><hr>
                     <input  type="text" name="cognome" id="cognome">
                     <label class="label" for="email">Email</label><hr>
                     <input  type="text" name="email" id="email">
+                    <label class="label" for="username">Username</label><hr>
+                    <input  type="text" name="username" id=username">
                     <label class="label" for="password">Password</label><hr>
                     <input type="password" name="password" id="password">
                     </div>
-                    <input type="submit" value="Accedi">
+                    <input type="submit" value="Registrati">
                 </form>
                 <br>
                 <a href="Accedi.jsp">Hai già un account, Accedi!</a>
@@ -50,7 +55,6 @@
             <aside class="contentSecondario col-2">
                 
             </aside>
-        
         <jsp:include page="footer.jsp" />
     </body>
 </html>

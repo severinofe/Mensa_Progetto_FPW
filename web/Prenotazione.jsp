@@ -1,3 +1,5 @@
+<%@taglib prefix = "c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 
 <!--
@@ -23,7 +25,10 @@
         <jsp:include page="header.jsp" />
         
         <jsp:include page="navbar.jsp" />
-        
+         <c:if test="${empty username}">
+            <c:redirect url="Accedi.jsp"/>
+        </c:if>
+    <c:if test="${not empty username}">
                     <!<!-- Contenuto principale della pagina -->
             <section class="contentPrimario col-1">
                 <div class="boxAccedi">
@@ -45,7 +50,7 @@
                 </form>
                 </div>
             </section>
-            
+           </c:if> 
             <!<!-- Contenuto secondario della pagina -->
             <aside class="contentSecondario col-2">
                 

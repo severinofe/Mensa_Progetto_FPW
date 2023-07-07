@@ -33,7 +33,8 @@
             <c:if test="${not empty username}">
 
                 <h1>Ciao ${username}!</h1>
-                <p>Ultimo accesso: ${lastLogin}</p>
+                <p>Ultimo accesso: ${lastLogin}</p><br>
+               
 
             </c:if>
          </section>
