@@ -43,8 +43,7 @@
             <c:if test="${not empty username}"> 
                 <div class="boxAccedi">
                 <form action="LogoutServlet" method="POST">
-                <input type="submit" value="Logout">   
-                    
+                <input type="submit" value="Logout">    
                 </form>
                  
             </c:if>

@@ -40,7 +40,7 @@ public class UtenteFactory {
         }
         Connection conn = null;
         PreparedStatement stmt = null;
-        ResultSet set = null;
+        boolean result=false;
 
         try {
             conn = DatabaseManager.getInstance().getDbConnection();
@@ -52,23 +52,23 @@ public class UtenteFactory {
             stmt.setString(3, nuovoUtente.getNome());
             stmt.setString(4, nuovoUtente.getCognome());
             stmt.setString(5, nuovoUtente.getEmail());
-            stmt.setString(6, "");
+            stmt.setString(6, "default");
             
-            set = stmt.executeQuery();
+            stmt.executeUpdate();
+            result=true;
             
             
         }
         catch(SQLException e) {
             Logger.getLogger(UtenteFactory.class.getName()).log(Level.SEVERE,null,e);
-            return false;
+            result=false;
         }
-        finally{
-        try{set.close();}catch(Exception e){ }  
+        finally{ 
         try{stmt.close();}catch(Exception e){ }  
         try{conn.close();}catch(Exception e){ }  
         
         } 
-        return true;
+        return result;
             
         
     }

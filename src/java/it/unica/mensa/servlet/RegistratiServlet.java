@@ -86,7 +86,10 @@ public class RegistratiServlet extends HttpServlet {
             request.getRequestDispatcher("error.jsp").forward(request, response);
             
         } catch (SQLException ex) {
+            request.setAttribute("errorMessage", ex.getMessage());
             Logger.getLogger(RegistratiServlet.class.getName()).log(Level.SEVERE, null, ex);
+            request.getRequestDispatcher("error.jsp").forward(request, response);
+            
         }
        
        

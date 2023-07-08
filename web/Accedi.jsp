@@ -1,3 +1,5 @@
+<%@taglib prefix = "c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
 <!--
@@ -26,18 +28,28 @@
             
                     <!<!-- Contenuto principale della pagina -->
             <section class="contentPrimario col-1">
-                <div class="boxAccedi">
-                       <h2>Accedi</h2>
-                        <form action="LoginServlet" method="POST">
-                        <label for="username">Username</label>
-                        <input type="text" name="username" id="username" value="">    
-                        <label for="psw">Password</label>
-                        <input type="password" name="psw" id="psw" value="">
-                        <button type="submit">Accedi</button><br>
-                        </form>
-                        <br>
                 
-                </div>
+                <c:if test="${empty username}"> 
+                    <div class="boxAccedi">
+                           <h2>Accedi</h2>
+                            <form action="LoginServlet" method="POST">
+                                <label for="username">Username</label>
+                                <input type="text" name="username" id="username" value="">    
+                                <label for="psw">Password</label>
+                                <input type="password" name="psw" id="psw" value="">
+                                <button type="submit">Accedi</button><br>
+                            </form>
+                            <br>
+                    </div>
+                </c:if>
+
+                <c:if test="${not empty username}">
+                <div class="boxAccedi">
+                    <form action="LogoutServlet" method="POST">
+                        <input type="submit" value="Logout">    
+                    </form>
+                </div> 
+                </c:if>
             </section>
             
             <!<!-- Contenuto secondario della pagina -->

@@ -74,7 +74,7 @@ public class LoginServlet extends HttpServlet {
             
         
     }
-    
+    /*
      private boolean login(String user, String pass){
         Hashtable<String, String> users = new Hashtable<String, String>();
         users.put("cucca","66190");
@@ -87,7 +87,7 @@ public class LoginServlet extends HttpServlet {
         
         return false;
     }
-
+*/
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
