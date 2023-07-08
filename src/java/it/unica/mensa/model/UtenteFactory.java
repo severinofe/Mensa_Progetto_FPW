@@ -5,6 +5,7 @@
 package it.unica.mensa.model;
 
 import it.unica.mensa.db.DatabaseManager;
+import it.unica.mensa.exceptions.InvalidParamException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.PreparedStatement;
@@ -30,6 +31,48 @@ public class UtenteFactory {
         }
         return instance;
     } 
+    
+    public boolean registraUtente(Utente nuovoUtente) throws SQLException, InvalidParamException{
+
+        if(nuovoUtente==null)
+        {
+            throw new InvalidParamException("ERRORE NUOVOUTENTE=NULL");
+        }
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet set = null;
+
+        try {
+            conn = DatabaseManager.getInstance().getDbConnection();
+            
+            String query = "INSERT INTO utenti VALUES (?, ?, ?, ?, ?, ?)";
+            stmt = conn.prepareStatement(query);
+            stmt.setString(1,nuovoUtente.getUsername());
+            stmt.setString(2, nuovoUtente.getPassword());
+            stmt.setString(3, nuovoUtente.getNome());
+            stmt.setString(4, nuovoUtente.getCognome());
+            stmt.setString(5, nuovoUtente.getEmail());
+            stmt.setString(6, "");
+            
+            set = stmt.executeQuery();
+            
+            
+        }
+        catch(SQLException e) {
+            Logger.getLogger(UtenteFactory.class.getName()).log(Level.SEVERE,null,e);
+            return false;
+        }
+        finally{
+        try{set.close();}catch(Exception e){ }  
+        try{stmt.close();}catch(Exception e){ }  
+        try{conn.close();}catch(Exception e){ }  
+        
+        } 
+        return true;
+            
+        
+    }
+    
     public Utente getUtentebyUsernamePassword(String username, String password){
         Connection conn = null;
         PreparedStatement stmt = null;

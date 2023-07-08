@@ -10,10 +10,11 @@
                 <li><a href="Chi_Siamo.jsp">Chi Siamo</a></li>
                 <c:if test="${not empty username}">
                     <li><a href="Prenotazione.jsp">Prenota</a></li>
-                    <li><a href="Prenotazione.jsp">Area Personale</a></li>
+                    <li><a href="areaPersonale.jsp">Area Personale</a></li>
                 </c:if>
                 <c:if test="${empty username}">
                     <li><a href="Accedi.jsp">Accedi</a></li>
+                     <li><a href="Registrazione.jsp">Registrati</a></li>
                 </c:if>
             </ul>
         </nav>

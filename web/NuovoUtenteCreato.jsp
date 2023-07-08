@@ -26,28 +26,24 @@
         <jsp:include page="navbar.jsp" />
         
         
-        <c:if test="${empty username}">
-            <c:redirect url="Accedi.jsp"/>
+        <c:if test="${nuovo_inserimento==false}">
+            <c:redirect url="Registrazione.jsp"/>
         </c:if>
         <section class="contentPrimario col-1">
-            <c:if test="${not empty username}">
+            <c:if test="${inserimento_corretto==true}">
 
-                <h1>Ciao ${username}!</h1>
-                <p>Ultimo accesso: ${lastLogin}</p><br>
-               
-
+                <h1>Utente creato con successo!</h1>
+                <ul>
+                    <li>Nome: ${nuovo_nome}</li>
+                    <li>Cognome ${nuovo_cognome}</li>
+                    <li>Email: ${nuovo_email}</li>
+                    <li>Username: ${nuovo_username}</li>
+                </ul>
             </c:if>
          </section>
         
         <aside class="contentSecondario col-2">
-            <c:if test="${not empty username}"> 
-                <div class="boxAccedi">
-                <form action="LogoutServlet" method="POST">
-                <input type="submit" value="Logout">   
-                    
-                </form>
-                 
-            </c:if>
+                
         </aside>
     </body>
 </html>

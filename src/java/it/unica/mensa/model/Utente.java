@@ -18,6 +18,7 @@ public class Utente {
     private String username;
     private String password;
     private String foto;
+    
 
     public String getNome() {
         return nome;
@@ -43,13 +44,6 @@ public class Utente {
         this.email = email;
     }
 
-    public String getCitta() {
-        return citta;
-    }
-
-    public void setCitta(String citta) {
-        this.citta = citta;
-    }
 
     public String getUsername() {
         return username;

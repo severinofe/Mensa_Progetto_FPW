@@ -31,7 +31,7 @@
             <section class="contentPrimario col-1">
                 <div class="boxAccedi">
                 <h2>Registrati</h2>
-                <form action="login" method="POST">
+                <form action="RegistratiServlet" method="POST">
                     <div class="nome">     
                     <label class="label" for="nome">Nome</label><hr>
                     <input  type="text" name="nome" id="nome">

@@ -49,15 +49,15 @@ public class LoginServlet extends HttpServlet {
         
             
             try{
-                Utils.checkString(username, minUsername,maxUsername);
-                Utils.checkString(psw, minPsw,maxPsw);
+                Utils.checkUsername(username);
+                Utils.checkPassword(psw);
                 Utente utente = UtenteFactory.getInstance().getUtentebyUsernamePassword(username,psw);
                 if(utente!=null){
                     session.setAttribute("username",username); // Set Username
                     session.setAttribute("lastLogin",Utils.convertTime(session.getLastAccessedTime())); // Set Last Login
                     session.setAttribute("email",utente.getEmail()); // Set Last Login
                     
-                    session.setMaxInactiveInterval(30); // Set tempo massimo di inattività prima che la sessione scada
+                    session.setMaxInactiveInterval(120); // Set tempo massimo di inattività prima che la sessione scada
                     response.sendRedirect("areaPersonale.jsp");
         
                 }   
